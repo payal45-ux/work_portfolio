@@ -1,5 +1,5 @@
 import {
-  FaGithub,
+ 
   FaInstagram,
   FaLinkedinIn,
   FaYoutube,
@@ -61,15 +61,6 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
           <a
-            href="https://github.com/akashrmalhotra"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a
             href="https://www.linkedin.com/in/akashrmalhotra/"
             target="_blank"
             rel="noreferrer"
@@ -88,7 +79,7 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.instagram.com/leftbraincoder/"
+            href="instagram.com/"
             target="_blank"
             rel="noreferrer"
           >
@@ -98,7 +89,7 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        href="/Akash_Malhotra.pdf"
+        href="/Red Black Dynamic Music Presentation.pdf"
         target="_blank"
         rel="noreferrer"
       >

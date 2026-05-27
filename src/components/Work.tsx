@@ -5,32 +5,28 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
+    title: "Making the festival occasion more alive with our beats",
+    category: "First birthday, first memories, forever vibes ",
     image: "/images/callhq.png",
-    link: "https://callhq.ai",
+    link: "https://www.instagram.com/reel/DWT1sWEgf4d/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
+    title: "The diamond in the sky ",
+    category: "Remixing",
     image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
+    link: "https://www.instagram.com/reel/DIjD5keBaQG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
+    title: "Dandiya Night",
+    category: "Dance is all about beats, you love it youdanced on it",
     image: "/images/broki.png",
-    link: "https://broki.in",
+    link: "https://www.instagram.com/reel/DS1_qJwgbeY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
+    title: "King of the beats",
+    category: "making the night lit with my beats and lyrics of Honey Singh",
     image: "/images/orrdr.png",
-    link: "https://orrdr.com",
+    link: "https://www.instagram.com/reel/DNKoSniBVuw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
 ];
 
@@ -64,7 +60,7 @@ const Work = () => {
     <div className="work-section" id="work">
       <div className="work-container section-container">
         <h2>
-          My <span>Work</span>
+          My spotlight <span>Works</span>
         </h2>
 
         <div className="carousel-wrapper">
@@ -106,10 +102,6 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">

@@ -30,6 +30,21 @@ const spheres = [...Array(30)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
+const CLUBS = [
+  { name: "Dutyfree", location: "Dwarka" },
+  { name: "Social", location: "Dwarka" },
+  { name: "My Bar Square", location: "Delhi" },
+  { name: "My Bar HQ", location: "Delhi" },
+  { name: "Redfrog", location: "Delhi" },
+  { name: "Soho", location: "Delhi" },
+  { name: "Barsoom", location: "Delhi" },
+  { name: "Downtown", location: "Delhi" },
+  { name: "Aurum", location: "Delhi" },
+  { name: "OTB", location: "Delhi" },
+  { name: "Delia", location: "Pusa Road" },
+  { name: "Mafiaso", location: "HKV" },
+];
+
 type SphereProps = {
   vec?: THREE.Vector3;
   scale: number;
@@ -60,7 +75,6 @@ function SphereGeo({
           -50 * delta * scale
         )
       );
-
     api.current?.applyImpulse(impulse, true);
   });
 
@@ -151,6 +165,7 @@ const TechStack = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const materials = useMemo(() => {
     return textures.map(
       (texture) =>
@@ -168,8 +183,35 @@ const TechStack = () => {
 
   return (
     <div className="techstack">
-      <h2> My Techstack</h2>
 
+      {/* ── Overlay: heading + club cards centred OVER the canvas ── */}
+      <div className="shows-overlay">
+
+        <div className="shows-header">
+          <p className="shows-eyebrow">Stages I've Owned</p>
+          <h2 className="shows-heading">Our Shows</h2>
+          <p className="shows-sub">From intimate lounges to rooftop arenas</p>
+        </div>
+
+        <div className="clubs-grid">
+          {CLUBS.map((club, i) => (
+            <div
+              className="club-card"
+              key={i}
+              style={{ animationDelay: `${i * 70}ms` }}
+            >
+              <span className="club-num">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="club-name">{club.name}</span>
+              <span className="club-loc">{club.location}</span>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      {/* ── Canvas (unchanged) ── */}
       <Canvas
         shadows
         gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
@@ -207,8 +249,11 @@ const TechStack = () => {
           <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
         </EffectComposer>
       </Canvas>
+
     </div>
   );
 };
 
 export default TechStack;
+
+
