@@ -11,7 +11,7 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-import "./styles/Techstack.css";
+import "./styles/TechStack.css";
 
 const textureLoader = new THREE.TextureLoader();
 
