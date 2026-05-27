@@ -6,11 +6,11 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I am currently co-founder of CallHQ.ai, building real-time voice AI for
-          businesses. I am a technologist at heart with strong business judgment—
-          I enjoy going from product strategy to hands-on engineering. My background
-          spans leadership at Adobe, founding Broki and CallHQ, and shipping
-          full-stack products end to end.
+          I’m a Delhi NCR based DJ and music producer with over 6+ years of experience creating electrifying nightlife experiences
+           across clubs, lounges, and private events. For me, music is more than just sound — it’s energy, atmosphere, and connection.
+            From Afrohouse and Bollywood to Techno, Hip Hop, and Commercial music, I blend genres seamlessly to deliver unforgettable 
+            sets, original mashups, and crowd-driven performances that keep the energy alive all night.
+
         </p>
       </div>
     </div>

@@ -2,11 +2,55 @@ import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+interface Service {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  skills: string[];
+}
+
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+  
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
+
+  const services: Service[] = [
+    {
+      id: 1,
+      title: "DJ & LIVE PERFORMANCE",
+      subtitle: "High-Energy Club Performances",
+      description:
+        "Professional DJ performances across Delhi & NCR's premium clubs, bars, and private events. 6+ years of experience delivering unforgettable nights with state-of-the-art Pioneer CDJ equipment and professional audio setup.",
+      skills: [
+        "Club Performances",
+        "Private Events",
+        "Pioneer CDJ 2000",
+        "Live Mixing",
+        "Event Energy",
+        "Audience Control",
+      ],
+    },
+    {
+      id: 2,
+      title: "MUSIC PRODUCTION & CREATION",
+      subtitle: "Original Tracks & Remixes",
+      description:
+        "Original track production and professional remixing. Specializing in multiple genres including Bollywood, Techno, Deep House, and Afro House. Creating dynamic mashups and transforming popular tracks into high-energy club banners.",
+      skills: [
+        "Original Tracks",
+        "Remixing",
+        "Mashups",
+        "Bollywood",
+        "Punjabi",
+        "Deep House",
+      ],
+    },
+    
+  ];
+
   useEffect(() => {
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
@@ -24,6 +68,7 @@ const WhatIDo = () => {
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -58,91 +103,53 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
 
-            <div className="what-content-in">
-              <h3>AI & AUTOMATION</h3>
-              <h4>Workflow Intelligence for Organizations</h4>
-              <p>
-                AI specialist helping organizations automate workflows—internal ops
-                and customer-facing—so teams ship faster with less manual work.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">LLMs &amp; agents</div>
-                <div className="what-tags">Workflow design</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals &amp; guardrails</div>
-                <div className="what-tags">Integrations</div>
-                <div className="what-tags">Product strategy</div>
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className="what-content what-noTouch"
+              ref={(el) => setRef(el, index)}
+            >
+              <div className="what-border1">
+                <svg height="100%">
+                  <line
+                    x1="0"
+                    y1="0"
+                    x2="100%"
+                    y2="0"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                  <line
+                    x1="0"
+                    y1="100%"
+                    x2="100%"
+                    y2="100%"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                </svg>
               </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>BUILD &amp; SCALE</h3>
-              <h4>Shipping AI in Production</h4>
-              <p>
-                I build the systems behind it: APIs, data, voice/real-time, and
-                full-stack products—production-ready, not slide decks.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Python</div>
-                <div className="what-tags">REST &amp; real-time APIs</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Cloud &amp; infra</div>
+              <div className="what-corner"></div>
+
+              <div className="what-content-in">
+                <h3>{service.title}</h3>
+                <h4>{service.subtitle}</h4>
+                <p>{service.description}</p>
+                <h5>Skillset & tools</h5>
+                <div className="what-content-flex">
+                  {service.skills.map((skill, idx) => (
+                    <div key={idx} className="what-tags">
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+                <div className="what-arrow"></div>
               </div>
-              <div className="what-arrow"></div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

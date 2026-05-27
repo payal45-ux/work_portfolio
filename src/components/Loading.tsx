@@ -62,8 +62,8 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
+            <span> Crafting Sonic Experiences</span> <span>Built To Drop</span>
+            <span> Crafting Sonic Experiences</span> <span>Built To Drop</span>
           </Marquee>
         </div>
         <div
@@ -97,7 +97,7 @@ export const setProgress = (setLoading: (value: number) => void) => {
 
   let interval = setInterval(() => {
     if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
+      let rand = Math.round(Math.random() * 4);
       percent = percent + rand;
       setLoading(percent);
     } else {
