@@ -40,12 +40,12 @@ const WhatIDo = () => {
       description:
         "Original track production and professional remixing. Specializing in multiple genres including Bollywood, Techno, Deep House, and Afro House. Creating dynamic mashups and transforming popular tracks into high-energy club banners.",
       skills: [
-        "Original Tracks",
+      
         "Remixing",
         "Mashups",
         "Bollywood",
         "Punjabi",
-        "Deep House",
+        
       ],
     },
     

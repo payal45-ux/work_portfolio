@@ -17,6 +17,7 @@
 .contact-flex {
   display: flex;
   justify-content: space-between;
+  gap: 50px;
 }
 
 .contact-flex h4 {
@@ -35,9 +36,16 @@
   margin-bottom: 20px;
 }
 
+
 a.contact-social {
-  font-size: 25px;
+  font-size: 18px; /* Pehle 25px tha, usko chota karke 18px ya 20px kar diya */
   border-bottom: 1px solid #ccc;
+  display: flex; /* Text aur arrow ko ek line mein laane ke liye */
+  align-items: center; /* Dono ko vertically center karne ke liye */
+  justify-content: space-between; /* Text aur arrow ke beech space dene ke liye */
+  white-space: nowrap; /* Text aur arrow ko doosri line me break hone se rokne ke liye */
+  padding-bottom: 5px; /* Line aur text ke beech thoda space dene ke liye */
+  margin-bottom: 10px; /* Har social link ke beech gap dene ke liye */
 }
 
 .contact-box h2 {

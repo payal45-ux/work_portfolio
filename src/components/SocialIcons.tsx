@@ -1,9 +1,10 @@
 import {
- 
+  FaWhatsapp,
+
   FaInstagram,
-  FaLinkedinIn,
-  FaYoutube,
+  
 } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
@@ -61,25 +62,25 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
           <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://wa.me/892924744"
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedinIn />
+            <FaWhatsapp />
           </a>
         </span>
         <span>
           <a
-            href="https://www.youtube.com/@Leftbraincoder"
+            href="mailto:djjatinvlogs0002@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
-            <FaYoutube />
+            <MdEmail />
           </a>
         </span>
         <span>
           <a
-            href="instagram.com/"
+            href="https://www.instagram.com/dj_jatin_2002/"
             target="_blank"
             rel="noreferrer"
           >

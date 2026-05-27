@@ -5,8 +5,8 @@ const Career = () => {
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          Beats<span>&</span>
+          <br /> Background
         </h2>
         <div className="career-info">
           <div className="career-timeline">
@@ -15,58 +15,60 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>Professional DJ</h4>
+                <h5>Freelance • New Delhi</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
+              Driven by a deep passion for music, performing as a professional
+              disc jockey utilizing digital devices. Continuously at the forefront
+              of rapidly evolving music sounds and techniques. Known for captivating
+              audiences with a unique mixing style and an impressive knowledge of diverse
+              musical genres
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
+                <h4>Guest DJ & Performer</h4>
+                <h5>Various Premium Venues  </h5>
               </div>
-              <h3>2017–24</h3>
+              <h3>Club gigs</h3>
             </div>
             <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Delivered high-energy sets at renowned clubs and venues including Dutyfree,
+              My Bar (Square, Headquarters, Delia), Barsoom 2.0, Social, Maquina, and Soho.
+              Successfully headlined major holiday events and themed club nights, including 
+              Halloween Night, Pre-Christmas parties, and sensational New Year's Eve bashes.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h4>Sound & Mashup Innovator</h4>
+                <h5>Live Mixing </h5>
               </div>
-              <h3>2016–17</h3>
+              <h3>Genre</h3>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
+              Mastered an extensive, multi-genre repertoire to keep dance floors engaged.
+              Specializing in Bollywood, Pop, House, Techno, Commercial, Bollytech, Indotech House,
+              Afro, UK Punjabi, Deep House, Hip Hop, EDM, Retro, Trance, Trap, and Bollyafro.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Sf Engineer</h4>
-                <h5>Infogain</h5>
+                <h4>Artist & Talent</h4>
+                <h5>EVE ANTS</h5>
               </div>
-              <h3>2013-16</h3>
+              <h3>Managed</h3>
             </div>
             <p>
-              Software engineering across enterprise projects, contributing to
-              design, development, and delivery of business applications.
+              Professionally managed and represented by EVE ANTS for live bookings, club performances,
+              and event curation. Ensuring seamless event execution and top-tier musical experiences for
+              clients across New Delhi and beyond
             </p>
           </div>
         </div>

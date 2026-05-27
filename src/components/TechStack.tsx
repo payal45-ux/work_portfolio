@@ -11,7 +11,10 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
+import "./styles/Techstack.css";
+
 const textureLoader = new THREE.TextureLoader();
+
 const imageUrls = [
   "/images/react2.webp",
   "/images/next2.webp",
@@ -22,6 +25,7 @@ const imageUrls = [
   "/images/typescript.webp",
   "/images/javascript.webp",
 ];
+
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
@@ -30,19 +34,22 @@ const spheres = [...Array(30)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
-const CLUBS = [
-  { name: "Dutyfree", location: "Dwarka" },
-  { name: "Social", location: "Dwarka" },
-  { name: "My Bar Square", location: "Delhi" },
-  { name: "My Bar HQ", location: "Delhi" },
-  { name: "Redfrog", location: "Delhi" },
-  { name: "Soho", location: "Delhi" },
-  { name: "Barsoom", location: "Delhi" },
-  { name: "Downtown", location: "Delhi" },
-  { name: "Aurum", location: "Delhi" },
-  { name: "OTB", location: "Delhi" },
-  { name: "Delia", location: "Pusa Road" },
-  { name: "Mafiaso", location: "HKV" },
+const clubShows = [
+  "DUTYFREE DWARKA",
+  "SOHO",
+  "AURUM",
+  "OTB",
+  "REDFROG",
+  "BARSOOM",
+  "LOCAL CP",
+  "ILLUME",
+  "HEAVEN BOX",
+  "OFFICIAL HKV",
+  "MAFIASO HKV",
+  "WA BAR",
+  "SOCIAL CLUB DWARKA",
+  "MY BAR HEADQUARTERS",
+  "F BAR",
 ];
 
 type SphereProps = {
@@ -64,7 +71,9 @@ function SphereGeo({
 
   useFrame((_state, delta) => {
     if (!isActive) return;
+
     delta = Math.min(0.1, delta);
+
     const impulse = vec
       .copy(api.current!.translation())
       .normalize()
@@ -75,6 +84,7 @@ function SphereGeo({
           -50 * delta * scale
         )
       );
+
     api.current?.applyImpulse(impulse, true);
   });
 
@@ -88,11 +98,13 @@ function SphereGeo({
       colliders={false}
     >
       <BallCollider args={[scale]} />
+
       <CylinderCollider
         rotation={[Math.PI / 2, 0, 0]}
         position={[0, 0, 1.2 * scale]}
         args={[0.15 * scale, 0.275 * scale]}
       />
+
       <mesh
         castShadow
         receiveShadow
@@ -115,6 +127,7 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
   useFrame(({ pointer, viewport }) => {
     if (!isActive) return;
+
     const targetVec = vec.lerp(
       new THREE.Vector3(
         (pointer.x * viewport.width) / 2,
@@ -123,6 +136,7 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
       ),
       0.2
     );
+
     ref.current?.setNextKinematicTranslation(targetVec);
   });
 
@@ -144,23 +158,30 @@ const TechStack = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
+
       const threshold = document
         .getElementById("work")!
         .getBoundingClientRect().top;
+
       setIsActive(scrollY > threshold);
     };
+
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
+
       element.addEventListener("click", () => {
         const interval = setInterval(() => {
           handleScroll();
         }, 10);
+
         setTimeout(() => {
           clearInterval(interval);
         }, 1000);
       });
     });
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -183,43 +204,30 @@ const TechStack = () => {
 
   return (
     <div className="techstack">
+      <h2 className="shows-heading">Our Shows</h2>
 
-      {/* ── Overlay: heading + club cards centred OVER the canvas ── */}
-      <div className="shows-overlay">
-
-        <div className="shows-header">
-          <p className="shows-eyebrow">Stages I've Owned</p>
-          <h2 className="shows-heading">Our Shows</h2>
-          <p className="shows-sub">From intimate lounges to rooftop arenas</p>
-        </div>
-
-        <div className="clubs-grid">
-          {CLUBS.map((club, i) => (
-            <div
-              className="club-card"
-              key={i}
-              style={{ animationDelay: `${i * 70}ms` }}
-            >
-              <span className="club-num">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="club-name">{club.name}</span>
-              <span className="club-loc">{club.location}</span>
-            </div>
-          ))}
-        </div>
-
+      <div className="shows-container">
+        {clubShows.map((club, index) => (
+          <div className="show-card" key={index}>
+            {club}
+          </div>
+        ))}
       </div>
 
-      {/* ── Canvas (unchanged) ── */}
       <Canvas
         shadows
-        gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
+        gl={{
+          alpha: true,
+          stencil: false,
+          depth: false,
+          antialias: false,
+        }}
         camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
         onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
         className="tech-canvas"
       >
         <ambientLight intensity={1} />
+
         <spotLight
           position={[20, 20, 25]}
           penumbra={1}
@@ -228,9 +236,12 @@ const TechStack = () => {
           castShadow
           shadow-mapSize={[512, 512]}
         />
+
         <directionalLight position={[0, 5, -4]} intensity={2} />
+
         <Physics gravity={[0, 0, 0]}>
           <Pointer isActive={isActive} />
+
           {spheres.map((props, i) => (
             <SphereGeo
               key={i}
@@ -240,20 +251,19 @@ const TechStack = () => {
             />
           ))}
         </Physics>
+
         <Environment
           files="/models/char_enviorment.hdr"
           environmentIntensity={0.5}
           environmentRotation={[0, 4, 2]}
         />
+
         <EffectComposer enableNormalPass={false}>
           <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
         </EffectComposer>
       </Canvas>
-
     </div>
   );
 };
 
 export default TechStack;
-
-
